@@ -1,0 +1,3 @@
+In order to be notified about the prices, you must first create a new Gmail account, whose only purpose will be to send emails.
+With the website open, put in a random first and last name, along with a random email and new password. Keep track of both of them.
+Then, input a random date of birth and gender, continue, and then accept the terms and conditions.
