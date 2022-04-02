@@ -35,4 +35,4 @@ if __name__=="main":
         file.write(dumps(p_info))
 location = os.getcwd()
 #This only exists for diagnostic purposes at the moment, due to bugs.
-os.system('(echo "* * * * * /usr/bin/python3 '+location+'/initial.py >/Users/robert/Programs/cron_log 2>&1") | crontab -')
+os.system('(echo * * * * * cd '+location+ ' /usr/bin/python3 ' + location +'/send_email.py >/Users/robert/Programs/cron_log 2>&1) | crontab -')
