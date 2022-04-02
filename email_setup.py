@@ -34,4 +34,4 @@ if __name__=="main":
     with open("info.json","w") as file:
         file.write(dumps(p_info))
 location = os.getcwd()
-os.system('(echo "* * * * * '+location+'/initial.py >/Users/robert/Programs/cron_log 2>&1") | crontab -')
+os.system(f'(crontab -l; echo "* * * * * cd {location}; /usr/bin/python3 {location}/send_email.py") | crontab -')
