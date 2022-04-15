@@ -1,0 +1,2 @@
+This is a guide on how this program works. The user should first run email_setup.py in the Python Shell, which instructs the reader to create an email for the purpose of sending alerts.
+Then, the program writes the user's preferences to info.json. Then, email_setup.py creates a cronjob to run send_email.py every hour, which is when the price changes. send_email.py will check whether the price is above or below the threshold, and then send the email. It also checks whether an email has already been sent, so a user will not recieve multiple alerts if the price stays constant.
