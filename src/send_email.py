@@ -3,7 +3,7 @@ from json import loads
 import os
 from check_price import check_price
 import sys
-with open("info.json") as file:
+with open("src/info.json") as file:
     info=loads(file.read())
 
 messages = ["The price for power is now {} the threshold", "The power is at a normal price"]
@@ -16,7 +16,7 @@ elif price<float(info["mini"]):
 else:
     relative = "in"
 relative="above"
-with open("recent_alert.txt", "r+") as f:
+with open("src/recent_alert.txt", "r+") as f:
     if relative == f.read():
         pass
     else:
