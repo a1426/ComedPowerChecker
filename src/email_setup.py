@@ -33,5 +33,7 @@ if __name__=="main":
     }
     with open("info.json","w") as file:
         file.write(dumps(p_info))
+
+import debug_smtp
 location = os.getcwd()
 os.system(f'(crontab -l; echo "* * * * * cd {location}; /usr/bin/python3 {location}/send_email.py") | crontab -')
