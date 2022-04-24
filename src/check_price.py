@@ -14,4 +14,3 @@ def check_price():
             raise ComedConnectionError("No connection could be made with Comed.")
     price=float(req.json()[0]["price"])
     return price
-print(check_price())

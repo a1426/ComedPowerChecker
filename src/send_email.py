@@ -15,7 +15,6 @@ elif price<float(info["mini"]):
     relative = "below"
 else:
     relative = "in"
-relative="above"
 with open("src/recent_alert.txt", "r+") as f:
     if relative == f.read():
         pass
