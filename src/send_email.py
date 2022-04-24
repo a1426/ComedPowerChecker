@@ -1,7 +1,7 @@
 import smtplib
 from json import loads
 import os
-from check_power_price import check_price
+from check_price import check_price
 import sys
 with open("info.json") as file:
     info=loads(file.read())
