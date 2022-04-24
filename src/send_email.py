@@ -3,10 +3,8 @@ from json import loads
 from check_price import check_price
 with open("src/info.json") as file:
     info=loads(file.read())
-#Git-Test. This is a random user. b
 messages = ["The price for power is now {} the threshold", "The power is at a normal price"]
 price = check_price()
-
 if price>float(info["maxi"]):
     relative = "above"
 elif price<float(info["mini"]):
