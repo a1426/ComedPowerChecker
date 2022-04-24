@@ -3,7 +3,7 @@ from json import loads
 from check_price import check_price
 with open("src/info.json") as file:
     info=loads(file.read())
-#Git-Test. This is a random user.
+#Git-Test. This is a random user. a
 messages = ["The price for power is now {} the threshold", "The power is at a normal price"]
 price = check_price()
 
