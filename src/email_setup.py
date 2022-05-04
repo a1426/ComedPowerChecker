@@ -34,7 +34,7 @@ def set_credentials(first_time):
     }
     with open("info.json","w") as file:
         file.write(dumps(p_info)) 
-if __name__="main":
+if __name__=="main":
     set_credentials(True)
     import debug_smtp
     debug_smtp.debug()
