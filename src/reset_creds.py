@@ -4,4 +4,4 @@ with open("src/info.json") as file:
     info=loads(file.read(),)
     print("These are your existing credientials:")
     print(info)
-#set_credentials(False)
+set_credentials(False)
