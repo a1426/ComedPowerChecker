@@ -1,7 +1,9 @@
 import requests
 class ComedConnectionError(Exception):
     pass
+#Comed API, this is where the price is stored.
 site="https://hourlypricing.comed.com/api?type=currenthouraverage"
+#Simply returns the price, if the website can't be accessed, it raises an error.
 def check_price():
     #Reaches out to the Comcast API to check the price
     try:

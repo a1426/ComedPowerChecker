@@ -1,4 +1,5 @@
 #Credit to https://github.com/python/cpython/blob/main/Mac/BuildScript/resources/install_certificates.command for the debugging code.
+#Tests for authentication errors, and downloads a library to fix them if they occur.
 import smtplib
 def debug():
     try:
