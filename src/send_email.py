@@ -15,7 +15,7 @@ elif price<float(info["mini"]):
 else:
     relative = "in"
 #Opens the recent_alert document and reads it. This document contains the most recent alert.
-#This is done to prevent the user from recieving repeated alerts that the power is low throughout the night.
+#This is done to prevent the user from the same alert each minute, and only sends an email once the alert changes.
 with open("src/recent_alert.txt", "r+") as f:
     if relative == f.read():
         pass
@@ -27,7 +27,6 @@ with open("src/recent_alert.txt", "r+") as f:
         f.seek(0)
         f.write(relative)
         f.truncate()
-        #Sends the email. Note: This will become deprecated.
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
             server.login(info["sender"], info["pswd"])
             server.sendmail(info["sender"], info["recipient"], message)
