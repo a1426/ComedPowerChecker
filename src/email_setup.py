@@ -31,13 +31,13 @@ def prompt_credentials(first_time):
                 if ct:
                     webbrowser.open(signup)
                     ct=0
+        two_factor="https://myaccount.google.com/signinoptions/two-step-verification/enroll-welcome"
+        input("Finally, you must enable two-factor authentication to get the app-password. The link will open")
+        webbrowser.open(two_factor)
+        app_psw="https://myaccount.google.com/u/1/apppasswords"
+        input("Finally, you must create an app password. Press enter to open the link. Select \"other\" as your app, and your computer")
+        webbrowser.open(app_psw)
     email=input("Enter the new email address:").strip()
-    two_factor="https://myaccount.google.com/signinoptions/two-step-verification/enroll-welcome"
-    input("Finally, you must enable two-factor authentication to get the app-password. The link will open")
-    webbrowser.open(two_factor)
-    app_psw="https://myaccount.google.com/u/1/apppasswords"
-    input("Finally, you must create an app password. Press enter to open the link. Select \"other\" as your app, and your computer")
-    webbrowser.open(app_psw)
     password=input("Enter the app-password:").strip()
     input(f"To confirm, your email is {email} and your password is {password}. Enter to continue. To reset, run reset_creds.py")
     set_credentials(email,rec_email,password,maxi,mini)

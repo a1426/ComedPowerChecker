@@ -1,7 +1,7 @@
-from email_setup import set_credentials
+from email_setup import prompt_credentials
 from json import loads
 with open("src/info.json") as file:
     info=loads(file.read(),)
-    print("These are your existing credientials:")
-    print(info)
-set_credentials(False)
+    print("These are your existing credientials:\n"+info)
+
+prompt_credentials(False)
