@@ -15,7 +15,7 @@ def set_credentials(email,rec_email,password,maxi,mini):
     with open("src/info.json","w") as file:
         file.write(dumps(p_info))
 
-def promt_credentials(first_time):
+def prompt_credentials(first_time):
     maxi=input("Enter the maximum price for power, in cents. You will be notified if the price becomes expensive.")
     mini=input("Enter the minimum alert price for power, in cents. You will be notified if the price becomes cheap.")
     rec_email = input("Enter your email address. Alerts will be sent to this email.")
@@ -43,7 +43,7 @@ def promt_credentials(first_time):
     set_credentials(email,rec_email,app_psw,maxi,mini)
 
 if __name__=="main":
-    set_credentials(True)
+    prompt_credentials(True)
     #Checks to make sure the connection can be authenticated
     import debug_smtp
     debug_smtp.debug()
