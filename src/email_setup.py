@@ -16,33 +16,33 @@ def set_credentials(email,rec_email,password,maxi,mini):
         file.write(dumps(p_info))
 
 def prompt_credentials(first_time):
-    maxi=input("Enter the maximum price for power, in cents. You will be notified if the price becomes expensive.")
-    mini=input("Enter the minimum alert price for power, in cents. You will be notified if the price becomes cheap.")
-    rec_email = input("Enter your email address. Alerts will be sent to this email.")
+    maxi=input("Enter the maximum price for power, in cents. You will be notified if the price becomes expensive.").strip()
+    mini=input("Enter the minimum alert price for power, in cents. You will be notified if the price becomes cheap.").strip()
+    rec_email = input("Enter your email address. Alerts will be sent to this email.").strip()
     #If its their first time, the user will have to be guided through setting up a disposable email.
     if first_time:
         ct=1
         signup="https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp"
         #This is the step by step guide for how to create a new email.
-        with open("email_guide.txt") as file:
+        with open("src/email_guide.txt") as file:
             for line in file.readlines():
                 print(line, end="")
                 input("Press Enter to Continue")
                 if ct:
                     webbrowser.open(signup)
                     ct=0
-    email=input("Enter the new email address:")
+    email=input("Enter the new email address:").strip()
     two_factor="https://myaccount.google.com/signinoptions/two-step-verification/enroll-welcome"
     input("Finally, you must enable two-factor authentication to get the app-password. The link will open")
     webbrowser.open(two_factor)
     app_psw="https://myaccount.google.com/u/1/apppasswords"
     input("Finally, you must create an app password. Press enter to open the link. Select \"other\" as your app, and your computer")
     webbrowser.open(app_psw)
-    password=input("Enter the app-password:")
+    password=input("Enter the app-password:").strip()
     input(f"To confirm, your email is {email} and your password is {password}. Enter to continue. To reset, run reset_creds.py")
-    set_credentials(email,rec_email,app_psw,maxi,mini)
+    set_credentials(email,rec_email,password,maxi,mini)
 
-if __name__=="main":
+if __name__=="__main__":
     prompt_credentials(True)
     #Checks to make sure the connection can be authenticated
     import debug_smtp

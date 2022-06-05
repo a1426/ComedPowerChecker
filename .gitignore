@@ -1,4 +1,4 @@
-info.json
-relative.txt
+src/info.json
+src/relative.txt
 __pycache__
 *.pyc

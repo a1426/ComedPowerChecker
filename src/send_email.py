@@ -1,5 +1,6 @@
 import smtplib
 from json import loads
+from xdrlib import ConversionError
 from check_price import check_price
 #Read the user's data from info.json, namely the tresholds, emails, and passwords
 with open("src/info.json") as file:
@@ -16,7 +17,7 @@ else:
     relative = "in"
 #Opens the recent_alert document and reads it. This document contains the most recent alert.
 #This is done to prevent the user from the same alert each minute, and only sends an email once the alert changes.
-with open("src/recent_alert.txt", "r+") as f:
+with open("src/relative.txt", "r+") as f:
     if relative == f.read():
         pass
     else:
